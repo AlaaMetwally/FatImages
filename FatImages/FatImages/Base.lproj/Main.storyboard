@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FatImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2pa-Mk-C8Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="fpV-Gg-BLK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-aT-Ej2">
+                                <rect key="frame" x="16" y="40" width="343" height="563"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="563" id="aAH-PE-Jeg"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uq7-Ps-Hx1">
+                                <rect key="frame" x="14" y="318.5" width="347" height="75"/>
+                                <connections>
+                                    <action selector="setTransparencyOfImageWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="VAF-nf-wBf"/>
+                                </connections>
+                            </slider>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PST-Dr-d6S">
+                                <rect key="frame" x="169" y="265" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="GrW-6e-fwz"/>
+                                    <constraint firstAttribute="width" constant="37" id="Y1G-Eg-8lj"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdV-zs-rSW">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Sync" id="BM7-uG-3j6" userLabel="Sync">
+                                        <connections>
+                                            <action selector="synchrnousDownloadWithSender:" destination="BYZ-38-t0r" id="CMG-ep-fRy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cik-4c-9hb"/>
+                                    <barButtonItem title="Async" id="KGQ-Ac-FGY" userLabel="Async">
+                                        <connections>
+                                            <action selector="simpleAsynchronousDownloadWithSender:" destination="BYZ-38-t0r" id="IWQ-vj-aNF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vhy-6z-2rz"/>
+                                    <barButtonItem title="Async + Completion" id="FlH-Qe-ZRC" userLabel="Async+Completion">
+                                        <connections>
+                                            <action selector="asynchrnousDownloadWithSender:" destination="BYZ-38-t0r" id="sy2-8g-IkK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fpV-Gg-BLK" firstAttribute="top" secondItem="Uq7-Ps-Hx1" secondAttribute="bottom" constant="274.5" id="37Q-yW-ro4"/>
+                            <constraint firstItem="Uq7-Ps-Hx1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3mq-Xt-1oT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uq7-Ps-Hx1" secondAttribute="trailing" id="7If-tN-ytl"/>
+                            <constraint firstItem="QVC-aT-Ej2" firstAttribute="top" secondItem="2pa-Mk-C8Y" secondAttribute="bottom" constant="20" id="G6v-Ef-wxj"/>
+                            <constraint firstItem="PST-Dr-d6S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="153" id="T3s-3j-DyX"/>
+                            <constraint firstItem="Uq7-Ps-Hx1" firstAttribute="top" secondItem="PST-Dr-d6S" secondAttribute="bottom" constant="16.5" id="XMo-Rv-cjG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PST-Dr-d6S" secondAttribute="trailing" constant="153" id="cM7-9F-J0S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVC-aT-Ej2" secondAttribute="trailing" id="rUL-J9-1Fr"/>
+                            <constraint firstItem="QVC-aT-Ej2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uvd-sN-14q"/>
+                            <constraint firstItem="PST-Dr-d6S" firstAttribute="top" secondItem="2pa-Mk-C8Y" secondAttribute="bottom" constant="245" id="zR4-lz-aGQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityView" destination="PST-Dr-d6S" id="VUB-BK-38w"/>
+                        <outlet property="photoView" destination="QVC-aT-Ej2" id="ujn-kI-WfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
